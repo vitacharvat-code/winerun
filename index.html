@@ -915,6 +915,30 @@
     .prop-block-wide { grid-column: span 1; }
   }
 
+  .cat-kids {
+    list-style: none;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--faint);
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+  .cat-kids li {
+    display: flex;
+    gap: 0.6rem;
+    align-items: baseline;
+  }
+  .cat-kids-cat {
+    font-size: 0.78rem; font-weight: 400;
+    color: var(--green);
+    letter-spacing: 0.06em;
+    min-width: 2rem;
+  }
+  .cat-kids-info {
+    font-size: 0.82rem; font-weight: 300;
+    color: #4a5568;
+  }
 </style>
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
@@ -1319,13 +1343,20 @@
       <div class="cat-card">
         <div class="cat-tag">Pro děti</div>
         <div class="cat-name">Dětské závody</div>
-        <div class="cat-detail">Start 11:00 · kategorie U3–U14 · 30 m až 1,25 km</div>
+        <div class="cat-detail">Start 11:00 · 30 m až 1,25 km · registrace na místě v den závodu</div>
         <div class="cat-price">
           <div class="cat-price-row">
             <span class="cat-price-val cat-free">Zdarma</span>
-            <span class="cat-price-note">registrace na místě</span>
           </div>
         </div>
+        <ul class="cat-kids">
+          <li><span class="cat-kids-cat">U3</span><span class="cat-kids-info">nar. 2023 a mladší · 30 m</span></li>
+          <li><span class="cat-kids-cat">U4</span><span class="cat-kids-info">nar. 2022 · 60 m</span></li>
+          <li><span class="cat-kids-cat">U6</span><span class="cat-kids-info">nar. 2021–2020 · 250 m</span></li>
+          <li><span class="cat-kids-cat">U8</span><span class="cat-kids-info">nar. 2019–2018 · 400 m</span></li>
+          <li><span class="cat-kids-cat">U11</span><span class="cat-kids-info">nar. 2017–2015 · 1,25 km</span></li>
+          <li><span class="cat-kids-cat">U14</span><span class="cat-kids-info">nar. 2014–2012 · 1,25 km</span></li>
+        </ul>
       </div>
 
       <div class="cat-card">
@@ -1385,7 +1416,7 @@
           <li><span class="prop-val">Zázemí — šatna, WC, sprchy</span></li>
           <li><span class="prop-val">Úschova zavazadel</span></li>
           <li><span class="prop-val">Vstup na večerní zábavu</span></li>
-          <li><span class="prop-val">Pamětní medaile</span></li>
+          <li><span class="prop-val">Pamětní medaile ze sklárny Jílek</span></li>
         </ul>
       </div>
 
@@ -1402,7 +1433,7 @@
 
       <div class="prop-block prop-block-wide">
         <div class="prop-title">Ceny &amp; zázemí</div>
-        <p class="prop-text">Nejlepší závodník a závodnice hlavního závodu <strong>vyhraje tolik vína, kolik váží</strong>. Pro každého běžce je připravena pamětní medaile.</p>
+        <p class="prop-text">Nejlepší závodník a závodnice hlavního závodu <strong>vyhraje tolik vína, kolik váží</strong>. Pro každého běžce je připravena pamětní medaile ze sklárny Jílek.</p>
         <p class="prop-text">Závodníci využijí zázemí Národopisného a fotbalového stadionu. K dispozici je stanové městečko zdarma v areálu sportoviště.</p>
         <p class="prop-text prop-note">Účast závodníků do 15 let pouze v doprovodu rodiče nebo zákonného zástupce. Do 18 let s podpisem rodiče.</p>
       </div>
