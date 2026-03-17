@@ -786,6 +786,7 @@
   .side-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 1fr;
     gap: 1px;
     background: rgba(255,255,255,0.08);
     border: 1px solid rgba(255,255,255,0.08);
@@ -826,7 +827,7 @@
 
   @media (max-width: 768px) {
     .side-section { padding: 3rem 1.5rem; }
-    .side-grid { grid-template-columns: 1fr 1fr; }
+    .side-grid { grid-template-columns: 1fr 1fr; grid-auto-rows: auto; }
   }
   @media (max-width: 480px) {
     .side-grid { grid-template-columns: 1fr; }
@@ -1418,7 +1419,7 @@
         <div class="side-icon">wine_bar</div>
         <div class="side-card-body">
           <div class="side-card-title">Otevřené sklepy</div>
-          <div class="side-card-desc">16 vinných sklepů v krumvířských sklepních uličkách. Degustace s permanentkou po celý den i večer.</div>
+          <div class="side-card-desc">16 vinných sklepů v krumvířských uličkách otevřených po celý den. Degustace s permanentkou.</div>
         </div>
       </div>
 
@@ -1426,7 +1427,7 @@
         <div class="side-icon">lunch_dining</div>
         <div class="side-card-body">
           <div class="side-card-title">Food trucky</div>
-          <div class="side-card-desc">Jídlo přímo v uličkách a v areálu stadionu. Lokální kuchyně, burgery, sladké i slané — energie před startem i po doběhu.</div>
+          <div class="side-card-desc">Jídlo přímo v uličkách a v areálu stadionu. Lokální kuchyně, burgery, sladké i slané.</div>
         </div>
       </div>
 
@@ -1434,7 +1435,7 @@
         <div class="side-icon">directions_run</div>
         <div class="side-card-body">
           <div class="side-card-title">Testování bot</div>
-          <div class="side-card-desc">Vyzkoušejte nejnovější běžeckou obuv přímo na trati. Najděte správnou botu ještě před startem — odborné poradenství na místě.</div>
+          <div class="side-card-desc">Vyzkoušejte nejnovější běžeckou obuv přímo na trati. Odborné poradenství na místě.</div>
         </div>
       </div>
 
