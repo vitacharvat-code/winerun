@@ -438,6 +438,82 @@
     100% { transform: translate(0px,0px); opacity:1; }
   }
   .fa23 { animation: fa22 0.65s cubic-bezier(0.22,1,0.36,1) 4.21s both; }
+
+  /* ── MOBILNÍ VERZE ── */
+  @media (max-width: 768px) {
+
+    nav {
+      padding: 1rem 1.5rem;
+    }
+    .nav-links { display: none; }
+
+    .hero-bg {
+      padding: 3rem 1.5rem 2rem;
+      min-height: auto;
+    }
+    .hero {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    /* kruh — menší, vycentrovaný */
+    .date-block {
+      width: 180px; height: 180px;
+      margin: 0 auto 0;
+      align-self: auto;
+    }
+    .date-num { font-size: 4rem; }
+    .date-month { font-size: 0.72rem; }
+    .date-loc { font-size: 0.62rem; }
+
+    h1 { font-size: clamp(2.4rem, 11vw, 3.5rem); }
+
+    .hero-desc {
+      font-size: 1rem;
+      max-width: 100%;
+    }
+
+    .hero-actions { padding-bottom: 1.5rem; }
+
+    /* runner — skrýt na mobilu nebo zmenšit */
+    .hero-runner svg { width: 200px; opacity: 0.22; }
+    .hero-runner { top: 3rem; }
+
+    /* terrain */
+    .terrain-section { padding: 0 1.5rem; }
+    .terrain-svg { overflow: visible; }
+
+    /* stats — dva sloupce na mobilu */
+    .stats {
+      padding: 1.5rem;
+      flex-wrap: wrap;
+      gap: 0;
+    }
+    .stat {
+      flex: 0 0 50%;
+      border-right: none;
+      border-bottom: 1px solid var(--faint);
+      padding: 1rem 0.5rem;
+    }
+    .stat:nth-child(odd) { border-right: 1px solid var(--faint); }
+    .stat:last-child { border-bottom: none; }
+    .stat-val { font-size: 2rem; }
+
+    /* sekce */
+    .section { padding: 3rem 1.5rem 4rem; }
+    .cards {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 480px) {
+    h1 { font-size: clamp(2rem, 13vw, 2.8rem); }
+    .date-block { width: 150px; height: 150px; }
+    .date-num { font-size: 3.2rem; }
+    .stat-val { font-size: 1.6rem; }
+    .stats { padding: 1rem; }
+  }
+
 </style>
 </head>
 <body>
