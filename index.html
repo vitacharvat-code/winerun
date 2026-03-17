@@ -4,7 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>WineRun — Krumvířský vinařský běh</title>
-<link rel="preconnect" href="https://api.fontshare.com">
+<link rel="preconnect" href="https://api.fontshare.com" crossorigin>
+<link rel="preconnect" href="https://cdn.fontshare.com" crossorigin>
 <link href="https://api.fontshare.com/v2/css?f[]=duepuntozero@900,700,400,300&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -63,7 +64,6 @@
     padding: 5rem 4rem 3rem;
     overflow: visible;
     position: relative;
-    min-height: 65vh;
   }
   .hero {
     display: grid;
@@ -110,7 +110,7 @@
 
   .hero-actions {
     display: flex; align-items: center; gap: 1.6rem;
-    padding-bottom: 2rem;
+    padding-bottom: 3rem;
     opacity: 0; animation: fadeUp 0.7s ease 0.75s forwards;
   }
   .btn-primary {
@@ -138,7 +138,7 @@
     display: flex; flex-direction: column;
     align-items: center; justify-content: center;
     text-align: center;
-    margin-bottom: 4rem;
+    margin-bottom: 0;
     align-self: end;
     flex-shrink: 0;
     opacity: 0; animation: fadeUp 0.7s ease 0.4s forwards;
@@ -153,12 +153,16 @@
     animation: fadeUp 0.9s ease 0.6s forwards;
     pointer-events: none;
     z-index: 1;
+    width: 0;
+    height: 0;
+    overflow: visible;
   }
   .hero-runner svg {
     width: 320px;
     height: auto;
     display: block;
     opacity: 0.32;
+    transform: translateX(-50%);
   }
   .date-num {
     font-size: 6.5rem; font-weight: 300;
@@ -179,16 +183,20 @@
   /* ── TERRAIN ── */
   .terrain-section {
     max-width: 1400px; margin: 0 auto;
-    padding: 0 4rem;
+    padding: 2rem 4rem 0;
     opacity: 0; animation: fadeUp 0.8s ease 0.9s forwards;
     position: relative;
     z-index: 2;
   }
   .terrain-label {
-    font-size: 0.88rem; font-weight: 300;
+    font-size: 1rem; font-weight: 400;
     letter-spacing: 0.14em; text-transform: uppercase;
-    color: #4a5568; margin-bottom: 0.6rem;
+    color: #1a202c; margin-bottom: 0.8rem;
     display: flex; align-items: center; gap: 0.6rem;
+  }
+  .terrain-label::before {
+    content: ''; width: 14px; height: 1px;
+    background: #1a202c;
   }
   .terrain-label::before {
     content: ''; width: 14px; height: 1px;
@@ -211,13 +219,13 @@
   .stat:last-child  { border-right: none; }
   .stat-val {
     font-size: 3rem; font-weight: 300;
-    color: var(--blue); letter-spacing: -0.02em; line-height: 1;
+    color: #1a3a6b; letter-spacing: -0.02em; line-height: 1;
   }
-  .stat-val em { color: var(--green); font-style: normal; font-size: 1.2rem; letter-spacing: 0.08em; font-weight: 300; }
+  .stat-val em { color: #2d7a2a; font-style: normal; font-size: 1.2rem; letter-spacing: 0.08em; font-weight: 300; }
   .stat-lbl {
     font-size: 0.95rem; font-weight: 400;
     letter-spacing: 0.1em; text-transform: uppercase;
-    color: #4a5568; margin-top: 0.4rem;
+    color: #2d3748; margin-top: 0.4rem;
   }
 
   /* ── ANIMATIONS ── */
@@ -461,10 +469,11 @@
       width: 180px; height: 180px;
       margin: 0 auto 0;
       align-self: auto;
+      overflow: hidden;
     }
-    .date-num { font-size: 4rem; }
-    .date-month { font-size: 0.72rem; }
-    .date-loc { font-size: 0.62rem; }
+    .date-num { font-size: 3.5rem; }
+    .date-month { font-size: 0.65rem; letter-spacing: 0.08em; }
+    .date-loc { font-size: 0.58rem; margin-top: 0.3rem; padding-top: 0.3rem; }
 
     h1 { font-size: clamp(2.4rem, 11vw, 3.5rem); }
 
@@ -508,8 +517,10 @@
 
   @media (max-width: 480px) {
     h1 { font-size: clamp(2rem, 13vw, 2.8rem); }
-    .date-block { width: 150px; height: 150px; }
-    .date-num { font-size: 3.2rem; }
+    .date-block { width: 140px; height: 140px; }
+    .date-num { font-size: 2.8rem; }
+    .date-month { font-size: 0.6rem; }
+    .date-loc { display: none; }
     .stat-val { font-size: 1.6rem; }
     .stats { padding: 1rem; }
   }
@@ -681,6 +692,7 @@
 </div><!-- /hero-bg -->
 
 <!-- TERRAIN -->
+<div style="background:#ffffff; position:relative; z-index:10; padding-top:3rem;">
 <div class="terrain-section">
   <div class="terrain-label">Profil trati · 6,6 km</div>
   <svg class="terrain-svg" viewBox="0 0 1260 195" xmlns="http://www.w3.org/2000/svg">
@@ -750,6 +762,7 @@
     <text x="944" y="92" font-family="'Duepuntozero',sans-serif" font-size="13" font-weight="300" fill="rgba(47,103,183,0.35)" opacity="0"><animate attributeName="opacity" from="0" to="1" begin="2.9s" dur="0.4s" fill="freeze"/>~212 m n.m.</text>
   </svg>
 </div>
+</div><!-- /terrain white wrapper -->
 
 <!-- STATS -->
 <div class="stats">
