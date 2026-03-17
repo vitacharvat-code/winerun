@@ -1329,21 +1329,21 @@
   .footer-inner {
     max-width: 1400px; margin: 0 auto;
     display: grid;
-    grid-template-columns: 200px 1fr 240px;
+    grid-template-columns: 280px 1fr;
     gap: 4rem;
     padding-bottom: 3rem;
     border-bottom: 1px solid rgba(255,255,255,0.06);
     margin-bottom: 2rem;
   }
   .footer-logo {
-    font-size: 1.1rem; font-weight: 400;
+    font-size: 1.3rem; font-weight: 400;
     letter-spacing: 0.1em; color: #ffffff;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.6rem;
   }
   .footer-tagline {
-    font-size: 0.78rem; font-weight: 300;
-    color: rgba(255,255,255,0.3);
-    letter-spacing: 0.04em; line-height: 1.6;
+    font-size: 0.82rem; font-weight: 300;
+    color: rgba(255,255,255,0.4);
+    letter-spacing: 0.04em; line-height: 1.7;
   }
   .footer-nav {
     display: flex;
@@ -1359,23 +1359,29 @@
   }
   .footer-nav a:hover { color: rgba(255,255,255,0.7); }
   .footer-contact {
-    display: flex; flex-direction: column; gap: 1rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    align-content: start;
   }
   .footer-contact-item {
     display: flex; flex-direction: column; gap: 0.15rem;
   }
   .footer-contact-label {
-    font-size: 0.78rem; font-weight: 400;
-    letter-spacing: 0.12em; text-transform: uppercase;
-    color: rgba(255,255,255,0.5);
+    font-size: 10px; font-weight: 400;
+    letter-spacing: 0.18em; text-transform: uppercase;
+    color: rgba(255,255,255,0.35);
+    display: block;
+    margin-bottom: 0.35rem;
   }
   .footer-contact-item span:not(.footer-contact-label),
   .footer-contact-item a {
     font-size: 1rem; font-weight: 300;
-    color: rgba(255,255,255,0.55);
+    color: rgba(255,255,255,0.85);
     text-decoration: none;
+    line-height: 1.5;
   }
-  .footer-contact-item a:hover { color: rgba(255,255,255,0.8); }
+  .footer-contact-item a:hover { color: rgba(255,255,255,1); }
   .footer-bottom {
     max-width: 1400px; margin: 0 auto;
     display: flex; justify-content: space-between;
@@ -1821,6 +1827,24 @@
     .sponsors-grid-6 { grid-template-columns: repeat(2, 1fr); }
   }
 
+
+  .footer-social {
+    display: flex; gap: 0.8rem;
+    margin-top: 1.2rem;
+  }
+  .footer-social-link {
+    color: rgba(255,255,255,0.4);
+    transition: color 0.2s;
+    display: flex; align-items: center;
+  }
+  .footer-social-link:hover { color: rgba(255,255,255,0.9); }
+  .footer-tagline {
+    font-size: 0.78rem; font-weight: 300;
+    color: rgba(255,255,255,0.35);
+    letter-spacing: 0.04em; line-height: 1.7;
+  }
+  .footer-contact-item span { display: block; }
+
 </style>
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
@@ -1836,6 +1860,7 @@
     <li><a href="#archiv">Archiv</a></li>
     <li><a href="#charita">Charita</a></li>
     <li><a href="#sponzori">Sponzoři</a></li>
+    <li><a href="#kontakt">Kontakt</a></li>
   </ul>
   <div class="nav-right">
     <a href="#registrace" class="nav-cta">Registrovat se</a>
@@ -1852,6 +1877,7 @@
   <a href="#archiv" onclick="document.querySelector('nav').classList.remove('nav-open')">Archiv</a>
   <a href="#charita" onclick="document.querySelector('nav').classList.remove('nav-open')">Charita</a>
   <a href="#sponzori" onclick="document.querySelector('nav').classList.remove('nav-open')">Sponzoři</a>
+  <a href="#kontakt" onclick="document.querySelector('nav').classList.remove('nav-open')">Kontakt</a>
   <a href="#registrace" class="nav-cta" onclick="document.querySelector('nav').classList.remove('nav-open')">Registrovat se</a>
 </div>
 
@@ -2781,24 +2807,27 @@
 </div>
 
 <!-- FOOTER -->
-<footer class="footer">
+<footer class="footer" id="kontakt">
   <div class="footer-inner">
+
     <div class="footer-brand">
       <div class="footer-logo">WineRun</div>
-      <div class="footer-tagline">Krumvířský vinařský běh · 20. 6. 2026</div>
+      <div class="footer-tagline">Krumvířský vinařský běh<br>20. června 2026 · Krumvíř</div>
+      <div class="footer-social">
+        <a href="https://www.facebook.com/wineruncz/" target="_blank" class="footer-social-link" aria-label="Facebook">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+        </a>
+        <a href="https://www.instagram.com/wineruncz/" target="_blank" class="footer-social-link" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        </a>
+      </div>
     </div>
-    <div class="footer-nav">
-      <a href="#o-zavodu">O závodu</a>
-      <a href="#program">Program</a>
-      <a href="#zavod">Závod &amp; startovné</a>
-      <a href="#doprovodny-program">Doprovodný program</a>
-      <a href="#archiv">Archiv</a>
-      <a href="#charita">Charita</a>
-    </div>
+
     <div class="footer-contact">
       <div class="footer-contact-item">
         <span class="footer-contact-label">Organizátor</span>
-        <span>proKRUMVÍŘ, z.s. · IČ 04145321</span>
+        <span>proKRUMVÍŘ, z.s.</span>
+        <span>IČ: 04145321</span>
       </div>
       <div class="footer-contact-item">
         <span class="footer-contact-label">Kontakt</span>
@@ -2808,11 +2837,16 @@
         <span class="footer-contact-label">Sponzoring</span>
         <a href="mailto:sponzoring@winerun.cz">sponzoring@winerun.cz</a>
       </div>
+      <div class="footer-contact-item">
+        <span class="footer-contact-label">Místo konání</span>
+        <a href="https://maps.google.com/?q=Národopisný+stadion+Krumvíř" target="_blank">Amfiteátr Národopisného stadionu, Krumvíř</a>
+      </div>
     </div>
+
   </div>
   <div class="footer-bottom">
     <span>© 2026 proKRUMVÍŘ, z.s.</span>
-    <span>Registrace probíhá přes SportSofware</span>
+    <span><a href="#registrace" style="color:inherit;opacity:0.6;text-decoration:none;">Registrovat se →</a></span>
   </div>
 </footer>
 
