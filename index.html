@@ -1439,6 +1439,222 @@
     .registration-inner { grid-template-columns: 1fr; gap: 2.5rem; }
   }
 
+
+  /* ── REGISTRAČNÍ FORMULÁŘ ── */
+  .registration-form {
+    background: #ffffff;
+    border: 1px solid var(--faint);
+    border-radius: 4px;
+    padding: 2.5rem;
+  }
+  .rf-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 1.6rem;
+  }
+  .rf-group:last-child { margin-bottom: 0; }
+  .rf-label {
+    font-size: 0.8rem; font-weight: 400;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    color: #1a202c;
+  }
+  .rf-req { color: var(--green); }
+  .rf-input {
+    font-family: 'Duepuntozero', sans-serif;
+    font-size: 0.95rem; font-weight: 300;
+    color: #1a202c;
+    background: #f8f9fb;
+    border: 1px solid var(--faint);
+    border-radius: 2px;
+    padding: 0.75rem 1rem;
+    width: 100%;
+    transition: border-color 0.15s, background 0.15s;
+    outline: none;
+  }
+  .rf-input:focus {
+    background: #ffffff;
+    border-color: var(--blue);
+  }
+  .rf-input::placeholder { color: rgba(47,103,183,0.3); }
+  .rf-textarea {
+    min-height: 100px;
+    resize: vertical;
+  }
+  select.rf-input { cursor: pointer; }
+
+  .rf-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.2rem;
+  }
+
+  .rf-radio-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+  .rf-radio {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    cursor: pointer;
+    padding: 0.9rem 1.2rem;
+    border: 1px solid var(--faint);
+    border-radius: 2px;
+    background: #f8f9fb;
+    transition: all 0.15s;
+  }
+  .rf-radio:has(input:checked) {
+    border-color: var(--blue);
+    background: #f0f5ff;
+  }
+  .rf-radio input { display: none; }
+  .rf-radio-box {
+    width: 16px; height: 16px;
+    border-radius: 50%;
+    border: 1.5px solid var(--faint);
+    flex-shrink: 0;
+    position: relative;
+    transition: border-color 0.15s;
+  }
+  .rf-radio:has(input:checked) .rf-radio-box {
+    border-color: var(--blue);
+  }
+  .rf-radio:has(input:checked) .rf-radio-box::after {
+    content: '';
+    position: absolute;
+    inset: 3px;
+    border-radius: 50%;
+    background: var(--blue);
+  }
+  .rf-radio-label {
+    display: flex; flex-direction: column; gap: 0.1rem;
+  }
+  .rf-radio-label strong {
+    font-size: 0.95rem; font-weight: 400; color: #1a202c;
+  }
+  .rf-radio-label small {
+    font-size: 0.78rem; font-weight: 300; color: #4a5568;
+  }
+
+  .rf-radio-inline {
+    display: flex; gap: 1rem;
+  }
+  .rf-radio-sm {
+    display: flex; align-items: center; gap: 0.5rem;
+    cursor: pointer;
+    font-size: 0.95rem; font-weight: 300; color: #1a202c;
+  }
+  .rf-radio-sm input { display: none; }
+  .rf-radio-sm .rf-radio-box {
+    width: 16px; height: 16px;
+    border-radius: 50%;
+    border: 1.5px solid var(--faint);
+    flex-shrink: 0;
+    position: relative;
+  }
+  .rf-radio-sm:has(input:checked) .rf-radio-box {
+    border-color: var(--blue);
+  }
+  .rf-radio-sm:has(input:checked) .rf-radio-box::after {
+    content: '';
+    position: absolute;
+    inset: 3px;
+    border-radius: 50%;
+    background: var(--blue);
+  }
+
+  .rf-stafeta {
+    background: rgba(47,103,183,0.04);
+    border: 1px solid rgba(47,103,183,0.12);
+    border-radius: 4px;
+    padding: 1.5rem;
+    margin-bottom: 1.6rem;
+  }
+  .rf-divider {
+    font-size: 0.75rem; font-weight: 400;
+    letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--blue);
+    margin-bottom: 1.2rem;
+    padding-bottom: 0.8rem;
+    border-bottom: 1px solid rgba(47,103,183,0.12);
+  }
+
+  .rf-checkbox {
+    display: flex; align-items: flex-start;
+    gap: 0.8rem; cursor: pointer;
+    font-size: 0.9rem; font-weight: 300; color: #4a5568;
+    line-height: 1.5;
+  }
+  .rf-checkbox input { display: none; }
+  .rf-checkbox-box {
+    width: 18px; height: 18px; flex-shrink: 0;
+    border: 1.5px solid var(--faint);
+    border-radius: 2px;
+    position: relative;
+    margin-top: 2px;
+    transition: all 0.15s;
+  }
+  .rf-checkbox:has(input:checked) .rf-checkbox-box {
+    background: var(--blue);
+    border-color: var(--blue);
+  }
+  .rf-checkbox:has(input:checked) .rf-checkbox-box::after {
+    content: '';
+    position: absolute;
+    left: 4px; top: 1px;
+    width: 6px; height: 10px;
+    border: 2px solid #fff;
+    border-top: none; border-left: none;
+    transform: rotate(45deg);
+  }
+  .rf-checkbox a { color: var(--blue); }
+
+  .rf-submit-row {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .rf-submit {
+    font-family: 'Duepuntozero', sans-serif;
+    font-size: 0.9rem; font-weight: 400;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    color: #ffffff;
+    background: var(--blue);
+    border: none; border-radius: 2px;
+    padding: 1rem 2rem;
+    cursor: pointer;
+    transition: opacity 0.2s;
+    width: 100%;
+  }
+  .rf-submit:hover { opacity: 0.88; }
+  .rf-submit:disabled { opacity: 0.5; cursor: default; }
+
+  .rf-message {
+    padding: 1rem 1.2rem;
+    border-radius: 2px;
+    font-size: 0.9rem; font-weight: 300;
+    line-height: 1.6;
+  }
+  .rf-message-ok {
+    background: rgba(114,169,111,0.1);
+    border: 1px solid rgba(114,169,111,0.3);
+    color: #2d7a2a;
+  }
+  .rf-message-err {
+    background: rgba(220,53,69,0.06);
+    border: 1px solid rgba(220,53,69,0.2);
+    color: #c0392b;
+  }
+  .rf-message a { color: inherit; }
+
+  @media (max-width: 768px) {
+    .rf-row { grid-template-columns: 1fr; gap: 0; }
+    .registration-form { padding: 1.5rem; }
+  }
+
 </style>
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
@@ -2191,20 +2407,195 @@
       </ul>
     </div>
     <div class="registration-form">
-      <iframe
-        id="JotFormIFrame-200332987745360"
-        title="WineRun 2026 Form CZ"
-        src="https://form.jotform.com/200332987745360"
-        style="min-width:100%;max-width:100%;height:600px;border:none;"
-        scrolling="yes"
-        allow="geolocation; microphone; camera"
-        allowfullscreen>
-      </iframe>
-      <script src="https://cdn.jotfor.ms/s/umd/latest/for-form-embed-handler.js"></script>
-      <script>
-        window.jotformEmbedHandler("iframe[id='JotFormIFrame-200332987745360']", "https://form.jotform.com/");
-      </script>
+      <form id="winerun-form" novalidate>
+
+        <!-- Typ závodu -->
+        <div class="rf-group">
+          <label class="rf-label">Chci běžet <span class="rf-req">*</span></label>
+          <div class="rf-radio-group">
+            <label class="rf-radio">
+              <input type="radio" name="q19_chciBezet" value="Hlavní závod: 6,6 km" required>
+              <span class="rf-radio-box"></span>
+              <span class="rf-radio-label">
+                <strong>Hlavní závod</strong>
+                <small>6,6 km · start 14:00</small>
+              </span>
+            </label>
+            <label class="rf-radio">
+              <input type="radio" name="q19_chciBezet" value="Štafeta: 4 x 1,25 km (registrace kapitána)">
+              <span class="rf-radio-box"></span>
+              <span class="rf-radio-label">
+                <strong>Štafeta</strong>
+                <small>4 × 1,65 km · registrace kapitána</small>
+              </span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Jméno a pohlaví -->
+        <div class="rf-row">
+          <div class="rf-group">
+            <label class="rf-label">Jméno <span class="rf-req">*</span></label>
+            <input type="text" name="q15_vaseJmeno15[first]" class="rf-input" placeholder="Vaše jméno" required>
+          </div>
+          <div class="rf-group">
+            <label class="rf-label">Příjmení <span class="rf-req">*</span></label>
+            <input type="text" name="q15_vaseJmeno15[last]" class="rf-input" placeholder="Vaše příjmení" required>
+          </div>
+        </div>
+
+        <!-- Pohlaví a datum -->
+        <div class="rf-row">
+          <div class="rf-group">
+            <label class="rf-label">Pohlaví <span class="rf-req">*</span></label>
+            <div class="rf-radio-inline">
+              <label class="rf-radio-sm">
+                <input type="radio" name="q29_pohlavi" value="Žena" required>
+                <span class="rf-radio-box"></span>
+                <span>Žena</span>
+              </label>
+              <label class="rf-radio-sm">
+                <input type="radio" name="q29_pohlavi" value="Muž">
+                <span class="rf-radio-box"></span>
+                <span>Muž</span>
+              </label>
+            </div>
+          </div>
+          <div class="rf-group">
+            <label class="rf-label">Datum narození <span class="rf-req">*</span></label>
+            <input type="text" name="q20_rocnikNarozeni" class="rf-input" placeholder="DD.MM.RRRR" required>
+          </div>
+        </div>
+
+        <!-- Email a PSČ -->
+        <div class="rf-row">
+          <div class="rf-group">
+            <label class="rf-label">E-mail <span class="rf-req">*</span></label>
+            <input type="email" name="q16_vasEmail" class="rf-input" placeholder="jmeno@example.com" required>
+          </div>
+          <div class="rf-group">
+            <label class="rf-label">PSČ / Město <span class="rf-req">*</span></label>
+            <input type="text" name="q22_psc" class="rf-input" placeholder="60200 Brno" required>
+          </div>
+        </div>
+
+        <!-- Štafeta — skryté, zobrazí se při volbě štafety -->
+        <div id="stafeta-fields" class="rf-stafeta" style="display:none">
+          <div class="rf-divider">Členové štafety</div>
+          <div class="rf-group">
+            <label class="rf-label">Název štafety <span class="rf-req">*</span></label>
+            <input type="text" name="q24_nazevStafety" class="rf-input" placeholder="Název vašeho týmu">
+          </div>
+          <div class="rf-row">
+            <div class="rf-group">
+              <label class="rf-label">2. běžec</label>
+              <input type="text" name="q31_jmenoA31" class="rf-input" placeholder="Jméno a příjmení">
+            </div>
+            <div class="rf-group">
+              <label class="rf-label">3. běžec</label>
+              <input type="text" name="q25_jmenoA" class="rf-input" placeholder="Jméno a příjmení">
+            </div>
+          </div>
+          <div class="rf-group" style="max-width:50%">
+            <label class="rf-label">4. běžec</label>
+            <input type="text" name="q26_jmenoA26" class="rf-input" placeholder="Jméno a příjmení">
+          </div>
+        </div>
+
+        <!-- Kolikátý WineRun -->
+        <div class="rf-group">
+          <label class="rf-label">Po kolikáté poběžíte WineRun? <span class="rf-req">*</span></label>
+          <select name="q27_poKolikate" class="rf-input" required>
+            <option value="">— vyberte —</option>
+            <option value="1">1. — poprvé!</option>
+            <option value="2">2.</option>
+            <option value="3">3.</option>
+            <option value="4">4.</option>
+            <option value="5">5.</option>
+            <option value="6">6.</option>
+            <option value="7">7.</option>
+            <option value="8">8.</option>
+            <option value="9">9.</option>
+            <option value="10">10.</option>
+            <option value="11">11. — pamětník!</option>
+          </select>
+        </div>
+
+        <!-- Poznámka -->
+        <div class="rf-group">
+          <label class="rf-label">Poznámka</label>
+          <textarea name="q28_poznamka" class="rf-input rf-textarea" placeholder="Chcete nám něco vzkázat? Jaký máte vztah ke Krumvíři?"></textarea>
+        </div>
+
+        <!-- Podmínky -->
+        <div class="rf-group">
+          <label class="rf-checkbox">
+            <input type="checkbox" name="q30_podminky" required>
+            <span class="rf-checkbox-box"></span>
+            <span>Souhlasím s <a href="#" target="_blank">podmínkami účasti</a> a zpracováním osobních údajů <span class="rf-req">*</span></span>
+          </label>
+        </div>
+
+        <!-- Submit -->
+        <div class="rf-submit-row">
+          <button type="submit" class="rf-submit" id="rf-submit-btn">
+            <span class="rf-submit-text">Odeslat přihlášku</span>
+            <span class="rf-submit-loading" style="display:none">Odesílám…</span>
+          </button>
+          <div id="rf-message" class="rf-message" style="display:none"></div>
+        </div>
+
+      </form>
     </div>
+
+    <script>
+    (function() {
+      // Toggle štafeta pole
+      document.querySelectorAll('input[name="q19_chciBezet"]').forEach(radio => {
+        radio.addEventListener('change', function() {
+          const stafeta = document.getElementById('stafeta-fields');
+          stafeta.style.display = this.value.includes('tafeta') ? 'block' : 'none';
+          document.querySelectorAll('#stafeta-fields input').forEach(inp => {
+            inp.required = stafeta.style.display === 'block';
+          });
+        });
+      });
+
+      // Submit přes JotForm API
+      document.getElementById('winerun-form').addEventListener('submit', async function(e) {
+        e.preventDefault();
+        const btn = document.getElementById('rf-submit-btn');
+        const msg = document.getElementById('rf-message');
+        btn.querySelector('.rf-submit-text').style.display = 'none';
+        btn.querySelector('.rf-submit-loading').style.display = 'inline';
+        btn.disabled = true;
+
+        const data = new FormData(this);
+        // JotForm potřebuje submitDate
+        data.append('submitDate', new Date().toISOString());
+
+        try {
+          const res = await fetch('https://submit.jotform.com/submit/200332987745360/', {
+            method: 'POST',
+            body: data,
+            mode: 'no-cors'
+          });
+          // no-cors = vždy opaque response, pokud doběhl = úspěch
+          this.style.display = 'none';
+          msg.style.display = 'block';
+          msg.className = 'rf-message rf-message-ok';
+          msg.innerHTML = '<strong>Přihláška odeslána!</strong><br>Brzy dostanete potvrzení na e-mail s pokyny k platbě.';
+        } catch(err) {
+          btn.querySelector('.rf-submit-text').style.display = 'inline';
+          btn.querySelector('.rf-submit-loading').style.display = 'none';
+          btn.disabled = false;
+          msg.style.display = 'block';
+          msg.className = 'rf-message rf-message-err';
+          msg.innerHTML = 'Něco se pokazilo. Zkuste to prosím znovu nebo napište na <a href="mailto:info@winerun.cz">info@winerun.cz</a>';
+        }
+      });
+    })();
+    </script>
   </div>
 </div>
 
