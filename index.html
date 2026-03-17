@@ -939,6 +939,63 @@
     font-size: 0.82rem; font-weight: 300;
     color: #4a5568;
   }
+
+  /* ── HAMBURGER & MOBILNÍ MENU ── */
+  .nav-right {
+    display: flex; align-items: center; gap: 1rem;
+  }
+  .nav-burger {
+    display: none;
+    flex-direction: column; gap: 5px;
+    background: none; border: none; cursor: pointer;
+    padding: 4px;
+  }
+  .nav-burger span {
+    display: block; width: 22px; height: 1.5px;
+    background: rgba(255,255,255,0.7);
+    transition: all 0.2s;
+  }
+  .nav-mobile-menu {
+    display: none;
+    position: fixed;
+    top: 57px; left: 0; right: 0;
+    background: #0f1a2e;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    flex-direction: column;
+    padding: 1rem 1.5rem 1.5rem;
+    gap: 0;
+    z-index: 99;
+  }
+  .nav-mobile-menu a {
+    font-size: 0.9rem; font-weight: 400;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    color: rgba(255,255,255,0.6);
+    text-decoration: none;
+    padding: 0.9rem 0;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    display: block;
+    transition: color 0.2s;
+  }
+  .nav-mobile-menu a:hover { color: #ffffff; }
+  .nav-mobile-menu .nav-cta {
+    margin-top: 1rem;
+    text-align: center;
+    border-bottom: none;
+    border-radius: 2px;
+    padding: 0.75rem;
+    color: #0f1a2e;
+    background: var(--green);
+  }
+  nav.nav-open + .nav-mobile-menu {
+    display: flex;
+  }
+
+  @media (max-width: 768px) {
+    .nav-links { display: none; }
+    .nav-burger { display: flex; }
+    nav { padding: 1rem 1.5rem; }
+  }
+
 </style>
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
@@ -947,13 +1004,25 @@
 <nav>
   <a href="#" class="nav-logo">WineRun</a>
   <ul class="nav-links">
-    <li><a href="#">Program</a></li>
-    <li><a href="#">Závod</a></li>
-    <li><a href="#">Víno</a></li>
-    <li><a href="#">Charita</a></li>
+    <li><a href="#o-zavodu">O závodu</a></li>
+    <li><a href="#program">Program</a></li>
+    <li><a href="#zavod">Závod & startovné</a></li>
+    <li><a href="#doprovodny-program">Doprovodný program</a></li>
   </ul>
-  <a href="#" class="nav-cta">Registrovat se</a>
+  <div class="nav-right">
+    <a href="#zavod" class="nav-cta">Registrovat se</a>
+    <button class="nav-burger" onclick="this.closest('nav').classList.toggle('nav-open')" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
 </nav>
+<div class="nav-mobile-menu">
+  <a href="#o-zavodu" onclick="document.querySelector('nav').classList.remove('nav-open')">O závodu</a>
+  <a href="#program" onclick="document.querySelector('nav').classList.remove('nav-open')">Program</a>
+  <a href="#zavod" onclick="document.querySelector('nav').classList.remove('nav-open')">Závod & startovné</a>
+  <a href="#doprovodny-program" onclick="document.querySelector('nav').classList.remove('nav-open')">Doprovodný program</a>
+  <a href="#zavod" class="nav-cta" onclick="document.querySelector('nav').classList.remove('nav-open')">Registrovat se</a>
+</div>
 
 <div class="hero-bg">
 <div class="hero">
@@ -968,8 +1037,8 @@
       6,6 km sklepními uličkami a vinohrady. Vyvažování vínem pro vítěze. Otevřené sklepy, hudba a letní noc na jihomoravském národopisném stadionu.
     </p>
     <div class="hero-actions">
-      <a href="#" class="btn-primary">Registrovat se</a>
-      <a href="#" class="btn-ghost">Program dne</a>
+      <a href="#zavod" class="btn-primary">Registrovat se</a>
+      <a href="#program" class="btn-ghost">Program dne</a>
     </div>
   </div>
   <div class="date-block">
@@ -1205,7 +1274,7 @@
 
 
 <!-- O AKCI -->
-<div class="about-section">
+<div class="about-section" id="o-zavodu">
   <div class="about-inner">
     <div class="about-text">
       <div class="sec-label">O závodu</div>
@@ -1235,7 +1304,7 @@
 </div>
 
 <!-- PROGRAM DNE -->
-<div class="program-section">
+<div class="program-section" id="program">
   <div class="program-inner">
     <div class="sec-label">Den závodu · 20. 6. 2026</div>
     <h2 class="sec-h2">Program dne</h2>
@@ -1302,7 +1371,7 @@
 
 
 <!-- KATEGORIE & CENY -->
-<div class="categories-section">
+<div class="categories-section" id="zavod">
   <div class="categories-inner">
     <div class="sec-label">Závod</div>
     <h2 class="sec-h2">Kategorie<br><span>&</span> startovné</h2>
@@ -1373,7 +1442,7 @@
 
     </div>
     <div class="cat-cta">
-      <a href="#" class="btn-primary">Registrovat se</a>
+      <a href="https://sportstiming.cz" target="_blank" class="btn-primary">Registrovat se</a>
       <span class="cat-note">Přihlášení probíhá přes SportSofware · platba online</span>
     </div>
   </div>
@@ -1382,7 +1451,7 @@
 
 
 <!-- PROPOZICE -->
-<div class="propozice-section">
+<div class="propozice-section" id="propozice">
   <div class="propozice-inner">
     <div class="sec-label">Důležité informace</div>
     <h2 class="sec-h2">Propozice<br><span>závodu</span></h2>
@@ -1443,7 +1512,7 @@
 </div>
 
 <!-- DOPROVODNÝ PROGRAM -->
-<div class="side-section">
+<div class="side-section" id="doprovodny-program">
   <div class="side-inner">
     <div class="sec-label">Víc než závod</div>
     <h2 class="sec-h2">Doprovodný<br><span>&</span> program</h2>
