@@ -849,7 +849,7 @@
   }
   .propozice-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 2rem;
     margin-top: 3rem;
   }
@@ -1412,20 +1412,13 @@
       <div class="cat-card">
         <div class="cat-tag">Pro děti</div>
         <div class="cat-name">Dětské závody</div>
-        <div class="cat-detail">Start 11:00 · 30 m až 1,25 km · registrace na místě v den závodu</div>
+        <div class="cat-detail">Start 11:00 · kategorie U3–U14 · trasy 30 m až 1,25 km · podrobné kategorie v propozicích</div>
         <div class="cat-price">
           <div class="cat-price-row">
             <span class="cat-price-val cat-free">Zdarma</span>
+            <span class="cat-price-note">registrace na místě</span>
           </div>
         </div>
-        <ul class="cat-kids">
-          <li><span class="cat-kids-cat">U3</span><span class="cat-kids-info">nar. 2023 a mladší · 30 m</span></li>
-          <li><span class="cat-kids-cat">U4</span><span class="cat-kids-info">nar. 2022 · 60 m</span></li>
-          <li><span class="cat-kids-cat">U6</span><span class="cat-kids-info">nar. 2021–2020 · 250 m</span></li>
-          <li><span class="cat-kids-cat">U8</span><span class="cat-kids-info">nar. 2019–2018 · 400 m</span></li>
-          <li><span class="cat-kids-cat">U11</span><span class="cat-kids-info">nar. 2017–2015 · 1,25 km</span></li>
-          <li><span class="cat-kids-cat">U14</span><span class="cat-kids-info">nar. 2014–2012 · 1,25 km</span></li>
-        </ul>
       </div>
 
       <div class="cat-card">
@@ -1490,13 +1483,25 @@
       </div>
 
       <div class="prop-block">
-        <div class="prop-title">Kategorie</div>
+        <div class="prop-title">Kategorie — hlavní závod</div>
         <ul class="prop-list">
           <li><span class="prop-val">Ženy / Muži do 19 let</span></li>
           <li><span class="prop-val">Ženy / Muži 20–39 let</span></li>
           <li><span class="prop-val">Ženy / Muži 40–49 let</span></li>
           <li><span class="prop-val">Ženy / Muži 50–59 let</span></li>
           <li><span class="prop-val">Ženy / Muži 60+</span></li>
+        </ul>
+      </div>
+
+      <div class="prop-block">
+        <div class="prop-title">Kategorie — děti (start 11:00)</div>
+        <ul class="prop-list">
+          <li><span class="prop-key">U3</span><span class="prop-val">nar. 2023 a mladší · 30 m</span></li>
+          <li><span class="prop-key">U4</span><span class="prop-val">nar. 2022 · 60 m</span></li>
+          <li><span class="prop-key">U6</span><span class="prop-val">nar. 2021–2020 · 250 m</span></li>
+          <li><span class="prop-key">U8</span><span class="prop-val">nar. 2019–2018 · 400 m</span></li>
+          <li><span class="prop-key">U11</span><span class="prop-val">nar. 2017–2015 · 1,25 km</span></li>
+          <li><span class="prop-key">U14</span><span class="prop-val">nar. 2014–2012 · 1,25 km</span></li>
         </ul>
       </div>
 
