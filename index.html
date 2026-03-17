@@ -242,7 +242,7 @@
     flex: 1; border-right: 1px solid var(--faint);
     padding: 0 2.5rem;
   }
-  .stat:first-child { padding-left: 0; }
+  .stat:first-child { padding-left: 2.5rem; }
   .stat:last-child  { border-right: none; }
   .stat-val {
     font-size: 3rem; font-weight: 300;
@@ -519,21 +519,34 @@
     .terrain-section { padding: 0 1.5rem; }
     .terrain-svg { overflow: visible; }
 
-    /* stats — dva sloupce na mobilu */
+    /* stats — grid na mobilu */
     .stats {
-      padding: 1.5rem;
+      padding: 0;
       flex-wrap: wrap;
       gap: 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
     }
     .stat {
-      flex: 0 0 50%;
+      flex: none;
       border-right: none;
       border-bottom: 1px solid var(--faint);
-      padding: 1rem 0.5rem;
+      padding: 1.2rem 1.2rem;
     }
+    .stat:first-child { padding-left: 1.2rem; }
+    .stat:nth-child(even) { border-right: none; }
     .stat:nth-child(odd) { border-right: 1px solid var(--faint); }
-    .stat:last-child { border-bottom: none; }
-    .stat-val { font-size: 2rem; }
+    /* poslední položka přes celou šířku pokud je 5 */
+    .stat:last-child:nth-child(odd) {
+      grid-column: 1 / -1;
+      border-right: none;
+      border-bottom: none;
+      text-align: center;
+    }
+    .stat:last-child:nth-child(even) { border-bottom: none; }
+    .stat:nth-last-child(2):nth-child(odd) { border-bottom: none; }
+    .stat-val { font-size: 1.8rem; }
+    .stat-lbl { font-size: 0.78rem; }
 
     /* sekce */
     .section { padding: 3rem 1.5rem 4rem; }
@@ -802,8 +815,8 @@
     <div class="stat-lbl">Start závodu</div>
   </div>
   <div class="stat">
-    <div class="stat-val">245<em>&nbsp;m</em></div>
-    <div class="stat-lbl">Max. nadmořská výška</div>
+    <div class="stat-val">130<em>&nbsp;m</em></div>
+    <div class="stat-lbl">Převýšení</div>
   </div>
   <div class="stat">
     <div class="stat-val">11<em>.&nbsp;ročník</em></div>
