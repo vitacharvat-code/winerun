@@ -1261,44 +1261,63 @@
 
   /* ── SPONZOŘI ── */
   .sponsors-section {
-    background: #f8f9fb;
+    background: #0f1a2e;
     padding: 5rem 4rem;
-    border-top: 1px solid var(--faint);
+    border-top: 1px solid rgba(255,255,255,0.06);
   }
   .sponsors-inner {
     max-width: 1400px; margin: 0 auto;
   }
+  .sponsors-section .sec-label {
+    color: rgba(255,255,255,0.4);
+    margin-bottom: 1.2rem;
+  }
+  .sponsors-section .sec-label::before { background: var(--green); }
+  .sponsors-section .sec-h2 {
+    color: #ffffff;
+  }
+  .sponsors-section .sec-h2 span { color: rgba(255,255,255,0.15); }
   .sponsors-intro {
     font-size: 1rem; font-weight: 300;
-    color: #4a5568; line-height: 1.7;
+    color: rgba(255,255,255,0.6); line-height: 1.7;
     max-width: 500px; margin-bottom: 3rem;
   }
   .sponsors-intro a {
-    color: var(--blue); text-decoration: none;
-    border-bottom: 1px solid var(--faint);
+    color: var(--green); text-decoration: none;
+    border-bottom: 1px solid rgba(114,169,111,0.3);
   }
   .sponsors-grid {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     gap: 1px;
-    background: var(--faint);
-    border: 1px solid var(--faint);
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.06);
     border-radius: 4px;
     overflow: hidden;
   }
   .sponsor-logo {
-    background: #ffffff;
+    background: rgba(255,255,255,0.04);
     height: 100px;
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 1rem;
     transition: background 0.2s;
   }
-  .sponsor-logo:hover { background: #f8f9fb; }
+  .sponsor-logo:hover { background: rgba(255,255,255,0.08); }
+  .sponsor-logo img {
+    max-width: 100%;
+    max-height: 60px;
+    object-fit: contain;
+    filter: brightness(0) invert(1);
+    opacity: 0.7;
+    transition: opacity 0.2s;
+  }
+  .sponsor-logo:hover img { opacity: 1; }
   .sponsor-logo-placeholder {
     font-size: 0.72rem; font-weight: 400;
     letter-spacing: 0.1em; text-transform: uppercase;
-    color: rgba(47,103,183,0.2);
+    color: rgba(255,255,255,0.2);
   }
 
   /* ── FOOTER ── */
@@ -1752,6 +1771,53 @@
   #jotform-wrapper .formFooter,
   #jotform-wrapper .form-powered-by {
     display: none !important;
+  }
+
+
+  /* ── SPONSORS TIERS ── */
+  .sponsors-tier {
+    margin-bottom: 3rem;
+  }
+  .sponsors-tier:last-child { margin-bottom: 0; }
+  .sponsors-tier-label {
+    font-size: 0.75rem; font-weight: 400;
+    letter-spacing: 0.16em; text-transform: uppercase;
+    color: rgba(255,255,255,0.35);
+    margin-bottom: 1rem;
+    padding-bottom: 0.6rem;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+  /* Generální partner — 1 velké logo */
+  .sponsors-grid-1 {
+    grid-template-columns: 1fr;
+    max-width: 400px;
+  }
+  .sponsors-grid-1 .sponsor-logo {
+    height: 140px;
+  }
+  /* Hlavní partneři — 3 loga */
+  .sponsors-grid-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .sponsors-grid-3 .sponsor-logo {
+    height: 120px;
+  }
+  /* Partneři — 6 log */
+  .sponsors-grid-6 {
+    grid-template-columns: repeat(6, 1fr);
+  }
+  .sponsors-grid-6 .sponsor-logo {
+    height: 90px;
+  }
+
+  @media (max-width: 768px) {
+    .sponsors-grid-1 { max-width: 100%; }
+    .sponsors-grid-3 { grid-template-columns: repeat(2, 1fr); }
+    .sponsors-grid-6 { grid-template-columns: repeat(3, 1fr); }
+  }
+  @media (max-width: 480px) {
+    .sponsors-grid-3 { grid-template-columns: 1fr; }
+    .sponsors-grid-6 { grid-template-columns: repeat(2, 1fr); }
   }
 
 </style>
@@ -2490,43 +2556,6 @@
 
 
 
-<!-- REGISTRACE -->
-<div class="registration-section" id="registrace">
-  <div class="registration-inner">
-    <div class="registration-text">
-      <div class="sec-label">Přihlášení</div>
-      <h2 class="sec-h2">Registrace<br><span>na závod</span></h2>
-      <p class="registration-desc">Registrace probíhá online přes formulář níže. Po odeslání dostanete potvrzující email s pokyny k platbě.</p>
-      <ul class="registration-info">
-        <li><span class="ri-label">Uzávěrka (zvýhodněné)</span><span class="ri-val">7. 6. 2026</span></li>
-        <li><span class="ri-label">Hlavní závod do uzávěrky</span><span class="ri-val">400 Kč</span></li>
-        <li><span class="ri-label">Hlavní závod po uzávěrce</span><span class="ri-val">500 Kč</span></li>
-        <li><span class="ri-label">Štafeta (4 × 1,65 km)</span><span class="ri-val">500 / 600 Kč</span></li>
-        <li><span class="ri-label">Dětské závody</span><span class="ri-val">Zdarma</span></li>
-      </ul>
-    </div>
-    <div class="registration-form">
-      <iframe
-        id="JotFormIFrame-200332987745360"
-        title="WineRun 2026 — Registrace"
-        src="https://form.jotform.com/200332987745360?isIframeEmbed=1&headerBackgroundColor=%23ffffff&mainBackgroundColor=%23ffffff&widgetBackgroundColor=%23f8f9fb&widgetTextColor=%231a202c&labelFontColor=%231a202c&inputBackgroundColor=%23f8f9fb&inputBorderColor=%23dde3ef&inputFontColor=%231a202c&buttonBackgroundColor=%232F67B7&buttonTextColor=%23ffffff&fontFamily=Arial&fontSize=14"
-        style="width:100%;min-height:700px;border:none;display:block;"
-        scrolling="no"
-        allow="geolocation; microphone; camera"
-        allowfullscreen>
-      </iframe>
-      <script>
-        // Dynamická výška iframu
-        window.addEventListener('message', function(e) {
-          if (e.data && e.data.action === 'setHeight' && e.data.formID === '200332987745360') {
-            document.getElementById('JotFormIFrame-200332987745360').style.minHeight = e.data.height + 'px';
-          }
-        });
-      </script>
-    </div>
-</div>
-</div><!-- /registration-section -->
-
 <!-- CHARITA -->
 <div class="charity-section" id="charita">
   <div class="charity-inner">
@@ -2601,20 +2630,94 @@
   </div>
 </div>
 
+<!-- REGISTRACE -->
+<div class="registration-section" id="registrace">
+  <div class="registration-inner">
+    <div class="registration-text">
+      <div class="sec-label">Přihlášení</div>
+      <h2 class="sec-h2">Registrace<br><span>na závod</span></h2>
+      <p class="registration-desc">Registrace probíhá online přes formulář níže. Po odeslání dostanete potvrzující email s pokyny k platbě.</p>
+      <ul class="registration-info">
+        <li><span class="ri-label">Uzávěrka (zvýhodněné)</span><span class="ri-val">7. 6. 2026</span></li>
+        <li><span class="ri-label">Hlavní závod do uzávěrky</span><span class="ri-val">400 Kč</span></li>
+        <li><span class="ri-label">Hlavní závod po uzávěrce</span><span class="ri-val">500 Kč</span></li>
+        <li><span class="ri-label">Štafeta (4 × 1,65 km)</span><span class="ri-val">500 / 600 Kč</span></li>
+        <li><span class="ri-label">Dětské závody</span><span class="ri-val">Zdarma</span></li>
+      </ul>
+    </div>
+    <div class="registration-form">
+      <iframe
+        id="JotFormIFrame-200332987745360"
+        title="WineRun 2026 — Registrace"
+        src="https://form.jotform.com/200332987745360?isIframeEmbed=1&headerBackgroundColor=%23ffffff&mainBackgroundColor=%23ffffff&widgetBackgroundColor=%23f8f9fb&widgetTextColor=%231a202c&labelFontColor=%231a202c&inputBackgroundColor=%23f8f9fb&inputBorderColor=%23dde3ef&inputFontColor=%231a202c&buttonBackgroundColor=%232F67B7&buttonTextColor=%23ffffff&fontFamily=Arial&fontSize=14"
+        style="width:100%;min-height:700px;border:none;display:block;"
+        scrolling="no"
+        allow="geolocation; microphone; camera"
+        allowfullscreen>
+      </iframe>
+      <script>
+        // Dynamická výška iframu
+        window.addEventListener('message', function(e) {
+          if (e.data && e.data.action === 'setHeight' && e.data.formID === '200332987745360') {
+            document.getElementById('JotFormIFrame-200332987745360').style.minHeight = e.data.height + 'px';
+          }
+        });
+      </script>
+    </div>
+</div>
+</div><!-- /registration-section -->
+
 <!-- SPONZOŘI -->
 <div class="sponsors-section" id="sponzori">
   <div class="sponsors-inner">
     <div class="sec-label">Děkujeme</div>
     <h2 class="sec-h2">Sponzoři<br><span>&amp; partneři</span></h2>
     <p class="sponsors-intro">Bez podpory našich partnerů by WineRun nebyl možný. Chcete se stát sponzorem? Napište nám na <a href="mailto:sponzoring@winerun.cz">sponzoring@winerun.cz</a></p>
-    <div class="sponsors-grid">
-      <div class="sponsor-logo sponsor-logo-placeholder">Logo sponzora</div>
-      <div class="sponsor-logo sponsor-logo-placeholder">Logo sponzora</div>
-      <div class="sponsor-logo sponsor-logo-placeholder">Logo sponzora</div>
-      <div class="sponsor-logo sponsor-logo-placeholder">Logo sponzora</div>
-      <div class="sponsor-logo sponsor-logo-placeholder">Logo sponzora</div>
-      <div class="sponsor-logo sponsor-logo-placeholder">Logo sponzora</div>
+
+    <!-- Generální partner -->
+    <div class="sponsors-tier">
+      <div class="sponsors-tier-label">Generální partner</div>
+      <div class="sponsors-grid sponsors-grid-1">
+        <div class="sponsor-logo sponsor-logo-placeholder">Logo generálního partnera</div>
+      </div>
     </div>
+
+    <!-- Hlavní partneři -->
+    <div class="sponsors-tier">
+      <div class="sponsors-tier-label">Hlavní partneři</div>
+      <div class="sponsors-grid sponsors-grid-3">
+        <div class="sponsor-logo sponsor-logo-placeholder">Logo partnera</div>
+        <div class="sponsor-logo sponsor-logo-placeholder">Logo partnera</div>
+        <div class="sponsor-logo sponsor-logo-placeholder">Logo partnera</div>
+      </div>
+    </div>
+
+    <!-- Partneři -->
+    <div class="sponsors-tier">
+      <div class="sponsors-tier-label">Partneři</div>
+      <div class="sponsors-grid sponsors-grid-6">
+        <div class="sponsor-logo sponsor-logo-placeholder">Logo</div>
+        <div class="sponsor-logo sponsor-logo-placeholder">Logo</div>
+        <div class="sponsor-logo sponsor-logo-placeholder">Logo</div>
+        <div class="sponsor-logo sponsor-logo-placeholder">Logo</div>
+        <div class="sponsor-logo sponsor-logo-placeholder">Logo</div>
+        <div class="sponsor-logo sponsor-logo-placeholder">Logo</div>
+      </div>
+    </div>
+
+    <!-- Partnerská vinařství -->
+    <div class="sponsors-tier">
+      <div class="sponsors-tier-label">Partnerská vinařství</div>
+      <div class="sponsors-grid sponsors-grid-6">
+        <div class="sponsor-logo sponsor-logo-placeholder">Logo</div>
+        <div class="sponsor-logo sponsor-logo-placeholder">Logo</div>
+        <div class="sponsor-logo sponsor-logo-placeholder">Logo</div>
+        <div class="sponsor-logo sponsor-logo-placeholder">Logo</div>
+        <div class="sponsor-logo sponsor-logo-placeholder">Logo</div>
+        <div class="sponsor-logo sponsor-logo-placeholder">Logo</div>
+      </div>
+    </div>
+
   </div>
 </div>
 
