@@ -996,6 +996,158 @@
     nav { padding: 1rem 1.5rem; }
   }
 
+
+  /* ── ARCHIV ── */
+  .archiv-section {
+    background: #ffffff;
+    padding: 5rem 4rem;
+    border-top: 1px solid var(--faint);
+  }
+  .archiv-inner {
+    max-width: 1400px; margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+  }
+
+  /* Rekordy */
+  .records-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: var(--faint);
+    border: 1px solid var(--faint);
+    border-radius: 4px;
+    overflow: hidden;
+    margin-top: 2.5rem;
+    max-width: 600px;
+  }
+  .record-card {
+    background: #f8f9fb;
+    padding: 2.5rem 2rem;
+  }
+  .record-gender {
+    font-size: 0.78rem; font-weight: 400;
+    letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--green); margin-bottom: 0.6rem;
+  }
+  .record-time {
+    font-size: 3.5rem; font-weight: 300;
+    color: var(--blue); letter-spacing: -0.03em;
+    line-height: 1;
+  }
+  .record-name {
+    font-size: 1rem; font-weight: 400;
+    color: #1a202c; margin-top: 0.8rem;
+  }
+  .record-year {
+    font-size: 0.8rem; font-weight: 300;
+    color: #4a5568; margin-top: 0.2rem;
+    letter-spacing: 0.04em;
+  }
+
+  /* Přehled vítězů */
+  .winners-table {
+    margin-top: 2.5rem;
+    border: 1px solid var(--faint);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  .wt-header {
+    display: grid;
+    grid-template-columns: 3rem 4rem 1fr 5rem 1fr 5rem;
+    gap: 0 1.5rem;
+    padding: 0.7rem 1.5rem;
+    background: #f8f9fb;
+    border-bottom: 1px solid var(--faint);
+    font-size: 0.72rem; font-weight: 400;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--muted);
+  }
+  .wt-row {
+    display: grid;
+    grid-template-columns: 3rem 4rem 1fr 5rem 1fr 5rem;
+    gap: 0 1.5rem;
+    padding: 0.85rem 1.5rem;
+    border-bottom: 1px solid var(--faint);
+    font-size: 0.92rem; font-weight: 300;
+    color: #1a202c;
+    transition: background 0.15s;
+  }
+  .wt-row:last-child { border-bottom: none; }
+  .wt-row:hover { background: #f8f9fb; }
+  .wt-highlight {
+    background: #f0f5ff;
+  }
+  .wt-highlight:hover { background: #e8f0fd; }
+  .wt-num { color: var(--muted); font-size: 0.8rem; }
+  .wt-time {
+    font-weight: 400; color: var(--blue);
+    font-variant-numeric: tabular-nums;
+  }
+  .wt-highlight .wt-time { color: var(--green); }
+
+  /* Archiv linky */
+  .archiv-links {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+  }
+  .archiv-links-title {
+    font-size: 1.4rem; font-weight: 300;
+    color: var(--blue); margin-top: 0.8rem;
+    margin-bottom: 1.8rem;
+    letter-spacing: -0.01em;
+  }
+  .archiv-links-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+  }
+  .archiv-btn {
+    display: inline-block;
+    font-size: 0.88rem; font-weight: 400;
+    letter-spacing: 0.08em;
+    color: var(--blue);
+    border: 1px solid var(--faint);
+    padding: 0.55rem 1.1rem;
+    border-radius: 2px;
+    text-decoration: none;
+    transition: all 0.15s;
+  }
+  .archiv-btn:hover {
+    background: var(--blue);
+    color: #ffffff;
+    border-color: var(--blue);
+  }
+  .archiv-btn-photo {
+    color: var(--green);
+    border-color: rgba(114,169,111,0.3);
+  }
+  .archiv-btn-photo:hover {
+    background: var(--green);
+    color: #ffffff;
+    border-color: var(--green);
+  }
+
+  @media (max-width: 768px) {
+    .archiv-section { padding: 3rem 1.5rem; }
+    .archiv-inner { gap: 3rem; }
+    .wt-header { display: none; }
+    .wt-row {
+      grid-template-columns: 2.5rem 3.5rem 1fr 4rem;
+      font-size: 0.82rem;
+    }
+    .wt-row span:nth-child(5),
+    .wt-row span:nth-child(6) { display: none; }
+    .archiv-links { grid-template-columns: 1fr; gap: 2.5rem; }
+    .records-grid { max-width: 100%; }
+  }
+  @media (max-width: 480px) {
+    .wt-row { grid-template-columns: 2.5rem 1fr 4rem; }
+    .wt-row span:nth-child(2) { display: none; }
+  }
+
 </style>
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
@@ -1008,6 +1160,7 @@
     <li><a href="#program">Program</a></li>
     <li><a href="#zavod">Závod & startovné</a></li>
     <li><a href="#doprovodny-program">Doprovodný program</a></li>
+    <li><a href="#archiv">Archiv</a></li>
   </ul>
   <div class="nav-right">
     <a href="#zavod" class="nav-cta">Registrovat se</a>
@@ -1557,6 +1710,175 @@
       </div>
 
     </div>
+  </div>
+</div>
+
+
+<!-- ARCHIV -->
+<div class="archiv-section" id="archiv">
+  <div class="archiv-inner">
+
+    <!-- Rekordy trati -->
+    <div class="archiv-records">
+      <div class="sec-label">Rekord trati</div>
+      <h2 class="sec-h2">Nejrychlejší<br><span>na trati</span></h2>
+      <div class="records-grid">
+        <div class="record-card">
+          <div class="record-gender">Muži</div>
+          <div class="record-time">21:22</div>
+          <div class="record-name">Jiří Homoláč</div>
+          <div class="record-year">11. ročník · 2025</div>
+        </div>
+        <div class="record-card">
+          <div class="record-gender">Ženy</div>
+          <div class="record-time">25:20</div>
+          <div class="record-name">Danka Truksová</div>
+          <div class="record-year">11. ročník · 2025</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Přehled vítězů -->
+    <div class="archiv-winners">
+      <div class="sec-label">Přehled vítězů</div>
+      <h2 class="sec-h2">Výsledky<br><span>ročníků</span></h2>
+      <div class="winners-table">
+        <div class="wt-header">
+          <span>Ročník</span>
+          <span>Rok</span>
+          <span>Muži</span>
+          <span>Čas</span>
+          <span>Ženy</span>
+          <span>Čas</span>
+        </div>
+        <div class="wt-row wt-highlight">
+          <span class="wt-num">11.</span>
+          <span>2025</span>
+          <span>Jiří Homoláč</span>
+          <span class="wt-time">21:22</span>
+          <span>Danka Truksová</span>
+          <span class="wt-time">25:20</span>
+        </div>
+        <div class="wt-row">
+          <span class="wt-num">10.</span>
+          <span>2024</span>
+          <span>Lukáš Kučera</span>
+          <span class="wt-time">21:51</span>
+          <span>Danka Truksová</span>
+          <span class="wt-time">26:25</span>
+        </div>
+        <div class="wt-row">
+          <span class="wt-num">9.</span>
+          <span>2023</span>
+          <span>Filip Ospalý</span>
+          <span class="wt-time">21:30</span>
+          <span>Danka Truksová</span>
+          <span class="wt-time">25:39</span>
+        </div>
+        <div class="wt-row">
+          <span class="wt-num">8.</span>
+          <span>2022</span>
+          <span>Lukáš Olejníček</span>
+          <span class="wt-time">21:41</span>
+          <span>Hana Vičarová</span>
+          <span class="wt-time">25:59</span>
+        </div>
+        <div class="wt-row">
+          <span class="wt-num">7.</span>
+          <span>2021</span>
+          <span>Jakub Špéra</span>
+          <span class="wt-time">21:58</span>
+          <span>Kateřina Švancarová</span>
+          <span class="wt-time">26:04</span>
+        </div>
+        <div class="wt-row">
+          <span class="wt-num">6.</span>
+          <span>2020</span>
+          <span>Ondřej Rosa</span>
+          <span class="wt-time">21:52</span>
+          <span>Kateřina Švancarová</span>
+          <span class="wt-time">26:06</span>
+        </div>
+        <div class="wt-row">
+          <span class="wt-num">5.</span>
+          <span>2019</span>
+          <span>Pavel Šedík</span>
+          <span class="wt-time">22:11</span>
+          <span>Irena Pospíšilová</span>
+          <span class="wt-time">26:04</span>
+        </div>
+        <div class="wt-row">
+          <span class="wt-num">4.</span>
+          <span>2018</span>
+          <span>František Mahovský</span>
+          <span class="wt-time">22:28</span>
+          <span>Irena Pospíšilová</span>
+          <span class="wt-time">25:34</span>
+        </div>
+        <div class="wt-row">
+          <span class="wt-num">3.</span>
+          <span>2017</span>
+          <span>Lukáš Soural</span>
+          <span class="wt-time">21:42</span>
+          <span>Zuzana Ožanová</span>
+          <span class="wt-time">26:49</span>
+        </div>
+        <div class="wt-row">
+          <span class="wt-num">2.</span>
+          <span>2016</span>
+          <span>František Mahovský</span>
+          <span class="wt-time">22:08</span>
+          <span>Hana Vejrostová</span>
+          <span class="wt-time">27:46</span>
+        </div>
+        <div class="wt-row">
+          <span class="wt-num">1.</span>
+          <span>2015</span>
+          <span>František Mahovský</span>
+          <span class="wt-time">21:56</span>
+          <span>Kateřina Doubková</span>
+          <span class="wt-time">29:16</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Výsledkové listiny & fotky -->
+    <div class="archiv-links">
+      <div class="archiv-links-col">
+        <div class="sec-label">Výsledky</div>
+        <h3 class="archiv-links-title">Výsledkové listiny</h3>
+        <div class="archiv-links-grid">
+          <a href="https://www.winerun.cz" target="_blank" class="archiv-btn">2025</a>
+          <a href="https://www.winerun.cz" target="_blank" class="archiv-btn">2024</a>
+          <a href="https://www.winerun.cz" target="_blank" class="archiv-btn">2023</a>
+          <a href="https://www.winerun.cz" target="_blank" class="archiv-btn">2022</a>
+          <a href="https://www.winerun.cz" target="_blank" class="archiv-btn">2021</a>
+          <a href="https://www.winerun.cz" target="_blank" class="archiv-btn">2020</a>
+          <a href="https://www.winerun.cz" target="_blank" class="archiv-btn">2019</a>
+          <a href="https://www.winerun.cz" target="_blank" class="archiv-btn">2018</a>
+          <a href="https://www.winerun.cz" target="_blank" class="archiv-btn">2017</a>
+          <a href="https://www.winerun.cz" target="_blank" class="archiv-btn">2016</a>
+          <a href="https://www.winerun.cz" target="_blank" class="archiv-btn">2015</a>
+        </div>
+      </div>
+      <div class="archiv-links-col">
+        <div class="sec-label">Fotogalerie</div>
+        <h3 class="archiv-links-title">Fotky z ročníků</h3>
+        <div class="archiv-links-grid">
+          <a href="https://www.winerun.cz" target="_blank" class="archiv-btn archiv-btn-photo">2025</a>
+          <a href="https://www.winerun.cz" target="_blank" class="archiv-btn archiv-btn-photo">2024</a>
+          <a href="https://www.winerun.cz" target="_blank" class="archiv-btn archiv-btn-photo">2023</a>
+          <a href="https://www.winerun.cz" target="_blank" class="archiv-btn archiv-btn-photo">2022</a>
+          <a href="https://www.winerun.cz" target="_blank" class="archiv-btn archiv-btn-photo">2021</a>
+          <a href="https://www.winerun.cz" target="_blank" class="archiv-btn archiv-btn-photo">2020</a>
+          <a href="https://www.winerun.cz" target="_blank" class="archiv-btn archiv-btn-photo">2019</a>
+          <a href="https://www.winerun.cz" target="_blank" class="archiv-btn archiv-btn-photo">2018</a>
+          <a href="https://www.winerun.cz" target="_blank" class="archiv-btn archiv-btn-photo">2017</a>
+          <a href="https://www.winerun.cz" target="_blank" class="archiv-btn archiv-btn-photo">2016</a>
+        </div>
+      </div>
+    </div>
+
   </div>
 </div>
 
